@@ -1,0 +1,17 @@
+---  # document start
+
+host: "192.168.1.1"
+port: "31114"
+user: "myuser"
+pwd: "mypassword"
+time_delta: 0.6
+pre_cmd:
+  - name: 'LGI_CMD'
+    text: '"LGI:OP=\"{}\", PWD=\"{}\";".format(user,pwd)'
+  - name: 'REG_CMD'
+    text: '"REG NE:NAME=\"{}\";".format(network_element)'
+post_cmd:
+  - name: 'LGO_CMD'
+    text: '"LGO:OP=\"{}\";".format(user)'
+
+...  # document end
